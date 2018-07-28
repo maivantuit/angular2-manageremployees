@@ -1,0 +1,14 @@
+ul{
+    font-size: 30px;
+    background: violet;
+    font-weight: 300px;
+
+}
+li {
+    color: #f1f1f1;
+    display: inline-block;
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: -5px;
+  }

@@ -1,0 +1,50 @@
+<div class="row">    
+    <div class="col-md-12">
+        <div class="col-md-4">
+           <input type="text" [(ngModel)]="keyword" name="keyword" style="height: 40px;width: 80%" />
+           <button (click)="Search()" class="btn btn-success">Search</button>
+       </div>
+      <div class="col-md-4">
+            <a [routerLink]="['/employee-add']"  class="btn btn-success" style="float: left;font-size:20px">Add new</a>
+       </div>
+  </div>
+</div>
+<table class="table" style="text-align: center">
+    <thead style="background: brown;font-size:20px">
+        <tr>          
+            <th>ID</th>
+            <th>Name</th>
+            <th>Working</th>
+            <th>Function</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of employees">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.working}}</td>   
+            <td>
+                <a [routerLink]="['/employee-detail',item.id]" class="btn btn-success">View detail</a>
+                |
+                <a [routerLink]="['/employee-edit',item.id]" class="btn btn-primary">Edit</a>
+                |
+                <button (click)="Delete(item.id)" class="btn btn-danger">Delete</button>
+            </td>         
+        </tr>
+    </tbody>
+</table>
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        <li>
+            <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li *ngFor="let page of pages"><a [routerLink]="['/employees']" [queryParams]="{pageNumber:page,filter:'a'}">{{page}}</a></li>
+        <li>
+            <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav> 

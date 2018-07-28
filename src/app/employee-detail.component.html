@@ -1,0 +1,19 @@
+<h2>Detail Employee:</h2>
+<table class="table" *ngIf="employee">
+    <tr>
+        <td>Id</td>
+        <td>{{employee.id}}</td>
+    </tr>
+     <tr>
+        <td>Name</td>
+        <td>{{employee.name}}</td>
+    </tr>
+     <tr>
+        <td>Working</td>
+        <td>{{employee.working}}</td>
+    </tr>    
+</table>
+<a class="btn btn-primary" [routerLink]="['overview']">Overview</a>
+<a class="btn btn-primary" [routerLink]="['projects']">Projects</a>
+
+<a class="btn btn-primary" [routerLink]="['/employees']">Go back</a>
