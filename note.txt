@@ -1,0 +1,2 @@
+﻿1. my-app: hidden so copy to src file.
+2. node_modules file important.
